@@ -5,6 +5,7 @@ import Logo from './components/Logo/logo';
 import ImageLinkForm from './components/ImageLinkForm/imagelinkform';
 import FaceRecognition from './components/FaceRecognition/facerecognition';
 import SignIn from './components/SignIn/signin';
+import Register from './components/Register/register';
 import Rank from './components/Rank/rank';
 import Particles from 'react-particles-js';
 import './App.css';
@@ -31,7 +32,8 @@ class App extends Component {
     this.state = {
       input: ' ',
       imageUrl: 'http://tysonhood.com/wp-content/uploads/2020/04/thicon10.png',
-      box: []
+      box: [],
+      route: 'signin'
     }
   }
 
@@ -66,20 +68,30 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  onRouteChange = (route) => {
+    this.setState({ route: route })
+  }
+
   render() {
-    const { imageUrl, box } = this.state;
+    const { imageUrl, box, route } = this.state;
     return (
       <div className="App">
             <Particles className='particles'
                 params={particlesOptions} />
-        <Navigation />
+        <Navigation onRouteChange={this.onRouteChange} />
         <Logo />
-        <SignIn />
-        <Rank />
-        <ImageLinkForm 
-        inputChange={this.onInputChange} 
-        onButtonSubmit={this.onButtonSubmit} />
-        <FaceRecognition box={box} imageUrl={imageUrl} />
+        { route === 'home' 
+          ? <div>
+              <Rank />
+              <ImageLinkForm inputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
+              <FaceRecognition box={box} imageUrl={imageUrl} /> 
+            </div>
+          : ( 
+            route === 'signin' 
+            ? <SignIn onRouteChange={this.onRouteChange} />
+            : <Register onRouteChange={this.onRouteChange} />
+          )
+        } 
       </div>
     )}
 }
