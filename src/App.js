@@ -33,7 +33,8 @@ class App extends Component {
       input: ' ',
       imageUrl: 'http://tysonhood.com/wp-content/uploads/2020/04/thicon10.png',
       box: [],
-      route: 'signin'
+      route: 'signin',
+      isSignedIn: false
     }
   }
 
@@ -69,16 +70,22 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
+    if(route === 'signout') {
+      this.setState({ isSignedIn: false })
+    } else if (route === 'home') {
+      this.setState({ isSignedIn: true })
+    }
+    
     this.setState({ route: route })
   }
 
   render() {
-    const { imageUrl, box, route } = this.state;
+    const { imageUrl, box, route, isSignedIn } = this.state;
     return (
       <div className="App">
             <Particles className='particles'
                 params={particlesOptions} />
-        <Navigation onRouteChange={this.onRouteChange} />
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         <Logo />
         { route === 'home' 
           ? <div>
