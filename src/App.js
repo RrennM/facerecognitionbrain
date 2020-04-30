@@ -10,6 +10,7 @@ import Rank from './components/Rank/rank';
 import Particles from 'react-particles-js';
 import './App.css';
 
+// Variables for the particle background effect
 const particlesOptions = {
   particles: {
     number: {
