@@ -27,23 +27,25 @@ const app = new Clarifai.App({
   apiKey: 'c43619b16dc449b493a59ff252b3af4a'
  });
 
+ const initialState = {
+  input: '',
+  imageUrl: 'http://tysonhood.com/wp-content/uploads/2020/04/thicon10.png',
+  box: [],
+  route: 'signin',
+  isSignedIn: false,
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    entries: 0,
+    joined: ''
+  }
+ }
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      input: ' ',
-      imageUrl: 'http://tysonhood.com/wp-content/uploads/2020/04/thicon10.png',
-      box: [],
-      route: 'signin',
-      isSignedIn: false,
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        entries: 0,
-        joined: ''
-      }
-    }
+    this.state = initialState;
   }
 
   loadUser = (data) => {
@@ -94,8 +96,9 @@ class App extends Component {
           })
           .then(response => response.json())
           .then(count => {
-            this.setState(Object.assign(this.state.user, { entries: count }))
+            this.setState(Object.assign(this.state.user, { entries: count }));
           })
+          .catch(console.log);
         }
 
         this.displayFaceBox(this.calculateFaceLocation(response))
@@ -105,7 +108,7 @@ class App extends Component {
 
   onRouteChange = (route) => {
     if(route === 'signout') {
-      this.setState({ isSignedIn: false })
+      this.setState( initialState )
     } else if (route === 'home') {
       this.setState({ isSignedIn: true })
     }
