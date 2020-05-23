@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from './components/Navigation/navigation';
-import Logo from './components/Logo/logo';
+// import Logo from './components/Logo/logo';
 import ImageLinkForm from './components/ImageLinkForm/imagelinkform';
 import FaceRecognition from './components/FaceRecognition/facerecognition';
 import SignIn from './components/SignIn/signin';
@@ -124,7 +124,7 @@ class App extends Component {
             <Particles className='particles'
                 params={particlesOptions} />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-        <Logo />
+        {/*<Logo />*/}
         { route === 'home' 
           ? <div>
               <Rank name={this.state.user.name} entries={this.state.user.entries}/>

@@ -1,0 +1,31 @@
+nav {
+    display: flex;
+    /* max-width: 100%; */
+    padding: 20px;
+    /* width: 100%; */
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 30%;
+    width: 100%;
+}
+
+.logoContainer img {
+    max-width: 100px;
+    width: 100%;
+}
+
+.navLinkContainer {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 70%;
+    width: 100%;
+}
+
+.navLinkContainer p {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
