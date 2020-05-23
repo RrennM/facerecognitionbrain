@@ -13,10 +13,10 @@ import './App.css';
 const particlesOptions = {
   particles: {
     number: {
-      value: 40,
+      value: 20,
       density: {
         enable: true,
-        value_area: 250
+        value_area: 350
       }
     }
   }
@@ -124,9 +124,8 @@ class App extends Component {
             <Particles className='particles'
                 params={particlesOptions} />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-        {/*<Logo />*/}
         { route === 'home' 
-          ? <div>
+          ? <div className="AppArea">
               <Rank name={this.state.user.name} entries={this.state.user.entries}/>
               <ImageLinkForm inputChange={this.onInputChange} onPictureSubmit={this.onPictureSubmit} />
               <FaceRecognition box={box} imageUrl={imageUrl} /> 

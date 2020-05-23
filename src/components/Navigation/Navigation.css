@@ -29,3 +29,24 @@ nav {
     align-items: center;
     margin-right: 30px;
 }
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    nav,
+    nav .logoContainer,
+    nav .navLinkContainer {
+        display: block;
+    }
+
+    nav .logoContainer,
+    nav .logoContainer .Tilt {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    nav .navLinkContainer,
+    nav .navLinkContainer p {
+        display: block;
+        margin: 0 auto;
+    }
+}

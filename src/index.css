@@ -1,9 +1,13 @@
 body {
-  background: linear-gradient(0.25turn, #3f87a6, #f69d3c);
+  background: linear-gradient(0.25turn, #0d2469, #024805);
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.AppArea {
+  padding: 0 20px;
 }
 
 code {
@@ -13,4 +17,14 @@ code {
 
 button {
   cursor: pointer;
+}
+
+p {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .AppArea div.absolute {
+    position: relative;
+  }
 }

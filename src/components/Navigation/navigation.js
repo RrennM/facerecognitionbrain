@@ -12,10 +12,10 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
                         <img className="Tilt-inner" src={logo} alt='logo'/>
                     </Tilt>
                 </div>
-                <div className='navLinkContainer' style={{display: 'flex', justifyContent: 'flex-end'}}>
+                <div className='navLinkContainer'>
                     <p 
                     onClick={() => onRouteChange('signout')}
-                    className='f4 link dim black pa3 pointer'>Sign Out</p>
+                    className='f4 link dim white pa3 pointer'>Sign Out</p>
                 </div>
             </nav>
         )
@@ -27,13 +27,13 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
                         <img className="Tilt-inner" src={logo} alt='logo'/>
                     </Tilt>
                 </div>
-                <div className='navLinkContainer' style={{display: 'flex', justifyContent: 'flex-end'}}>
+                <div className='navLinkContainer'>
                     <p 
                     onClick={() => onRouteChange('signin')} 
-                    className='f4 link dim black pa3 pointer'>Sign In</p>
+                    className='f4 link dim white pa3 pointer'>Sign In</p>
                     <p 
                     onClick={() => onRouteChange('register')} 
-                    className='f4 link dim black pa3 pointer'>Register</p>
+                    className='f4 link dim white pa3 pointer'>Register</p>
                 </div>
             </nav>
         )

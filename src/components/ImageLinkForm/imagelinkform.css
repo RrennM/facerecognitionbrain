@@ -18,3 +18,25 @@
     background-color: #232927;
     background-size: 100px 100px;
 }
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .AppArea .center {
+      display: block;
+    }
+    
+    .AppArea div.form {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
+    .AppArea div.form input.center {
+      display: block;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+    
+    .AppArea div.form button {
+      width: 100%;
+    }
+  }
